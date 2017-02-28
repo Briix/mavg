@@ -1,0 +1,11 @@
+{
+  "name": "mavg",
+  "version": "1.0.0",
+  "description": "Find average movie rating",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Brix",
+  "license": "ISC"
+}
