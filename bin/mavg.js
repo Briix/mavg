@@ -43,12 +43,16 @@ function formatRatings (ratings) {
 
   table.push([imdbRating, tomatoRating, (imdbRating + tomatoRating) / 2])
 
-  var formattedOutput = addMovieTitle(ratings.Title, table.toString())
+  var formattedOutput = addMovieTitle(ratings.Title, ratings.Year, table.toString())
   process.stdout.write(formattedOutput)
 }
 
-function addMovieTitle (title, table) {
-  return `\n Movie: ${title} \n\n${table}`
+function addMovieTitle (title, year, table) {
+  return `
+ Movie: ${title} \n
+ Year: ${year} \n
+${table}
+  `
 }
 
 function processUrlOptions (obj) {
