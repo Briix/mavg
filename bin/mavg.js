@@ -41,7 +41,7 @@ function formatRatings (ratings) {
   var imdbRating = parseFloat(ratings.imdbRating)
   var tomatoRating = parseFloat(ratings.tomatoRating)
 
-  table.push([imdbRating, tomatoRating, (imdbRating + tomatoRating) / 2])
+  table.push([imdbRating, tomatoRating, ((imdbRating + tomatoRating) / 2).toFixed(1)])
 
   var formattedOutput = addMovieTitle(ratings.Title, ratings.Year, table.toString())
   process.stdout.write(formattedOutput)
