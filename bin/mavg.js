@@ -9,11 +9,13 @@ var API_BASE = 'http://www.omdbapi.com/?'
 
 program
   .version(version)
+  .option('-i, --id <id>', 'Specify IMDB id for movie to get ratings for')
   .option('-t, --title <title>', 'Specify title to get ratings for')
   .option('-y, --year <year>', 'Specify year title is from')
   .parse(process.argv)
 
 var urlOptions = {
+  i: program.id || undefined,
   t: program.title || undefined,
   y: program.year || undefined,
   tomatoes: true
@@ -23,10 +25,10 @@ var table = new Table({
   head: ['IMDB', 'Rotten Tomatoes', 'Avg']
 })
 
-if (program.title) {
+if (program.title || program.id) {
   request(API_BASE + processUrlOptions(urlOptions), omdbCallback)
 } else {
-  process.stderr.write('A title must be specified. See --help for more information')
+  process.stderr.write('A title or id must be specified. See --help for more information')
 }
 
 function omdbCallback (err, resp, body) {
