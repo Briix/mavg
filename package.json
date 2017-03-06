@@ -2,12 +2,17 @@
   "name": "mavg",
   "version": "1.0.0",
   "description": "Find average movie rating",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "mavg": "./bin/mavg.js"
   },
+  "keywords": [
+    "IMDB",
+    "cli",
+    "Tomatoes",
+    "movies"
+  ],
   "author": "Simon Brix",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cli-table": "^0.3.1",
     "commander": "^2.9.0",
